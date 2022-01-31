@@ -10,12 +10,17 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
-add_subdirectory(external/glfw-3.3.6)
+add_subdirectory( glfw )
+# add_subdirectory(external/glfw-3.3.6)
 
 set( LEARNOPENGL-SRC
      main.cpp
      )
 
 
-add_executable( LearnOpenGL WIN32 ${LEARNOPENGL-SRC} )
-target_link_libraries( LearnOpenGL ${OPENGL_LIBRARIES} external/glfw-3.3.6 )
+#add_executable( LearnOpenGL WIN32 ${LEARNOPENGL-SRC} )
+add_executable( LearnOpenGL ${LEARNOPENGL-SRC} )
+
+#target_link_libraries( LearnOpenGL ${OPENGL_LIBRARIES} external/glfw-3.3.6 )
+target_link_libraries( LearnOpenGL ${OPENGL_LIBRARIES} glfw )
+
