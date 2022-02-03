@@ -13,8 +13,8 @@ sudo make
 sudo make install
 
 ```
-
-
+Then, add glad. 
+Now, you can compile the project.
 
 ```
 cd learning_opengl
