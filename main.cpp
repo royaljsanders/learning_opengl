@@ -3,12 +3,12 @@
 
 // include GLAD before other header files that require OpenGL (like GLFW)
 #include "include/glad/glad.h"
-#include "include/GLFW/glfw3.h"
+#include "glfw/include/GLFW/glfw3.h"
 #include <iostream>
 // using namespace std;
-
+/*
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window);
+void processInput(GLFWwindow* window);*/
 
 int main()
 {
@@ -33,7 +33,7 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // calling our function
+    // glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // calling our function
 
     // GLAD
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -45,7 +45,7 @@ int main()
     // render loop
     while(!glfwWindowShouldClose(window))
     {
-        processInput(window);
+        // processInput(window);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
@@ -55,17 +55,17 @@ int main()
 }
 
 // https://www.glfw.org/docs/latest/group__keys.html
-void processInput(GLFWwindow* window)
-{
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-        glfwSetWindowShouldClose(window, true);
-    }
-}
-
-// whenever the window size changes, resize viewport to match window dimensions
+// void processInput(GLFWwindow* window)
+// {
+//     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+//         glfwSetWindowShouldClose(window, true);
+//     }
+// }
+/*
+whenever the window size changes, resize viewport to match window dimensions
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    // processed coordinates in OpenGL are between -1 and 1 so we effectively map from the range (-1 to 1) to (0, 800) and (0, 600)
+    processed coordinates in OpenGL are between -1 and 1 so we effectively map from the range (-1 to 1) to (0, 800) and (0, 600)
     glViewport(0, 0, width, height);
-}
+}*/
 
